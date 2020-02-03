@@ -8,13 +8,13 @@ export const List = () => {
   const store = useStore();
 
   return useObserver(() => (
-    <div>
-      <table>
+    <div className="List">
+      <table className="listTbl">
         <colgroup>
           <col width="5%" />
-          <col width="20%" />
-          <col width="20%" />
-          <col width="20%" />
+          <col width="23%" />
+          <col width="23%" />
+          <col width="23%" />
           <col width="" />
         </colgroup>
         <thead>

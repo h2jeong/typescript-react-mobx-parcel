@@ -9,19 +9,18 @@ export const Search = () => {
   const handleChange = e => {
     setTerm(e.target.value);
     setName(e.target.name);
-    store.term = term;
-    store.itemProps = name;
     console.log(term, name);
   };
-  const searchTerm = () => {
-    store.searchTerm();
-    setTerm("");
-    setName("");
-  };
+  // 검색 함수 만들기
 
+  const checkAll = () => {
+    store.checkAll();
+  };
   return (
     <tr>
-      <th></th>
+      <th>
+        <input type="checkbox" onClick={checkAll} />
+      </th>
       <th>
         <label>등록일</label>
         <br />
@@ -29,7 +28,6 @@ export const Search = () => {
           type="text"
           name="createAt"
           onChange={handleChange}
-          onKeyDown={onEnterPress(searchTerm)}
           placeholder="Search"
         />
       </th>
@@ -40,7 +38,6 @@ export const Search = () => {
           type="text"
           name="updatedAt"
           onChange={handleChange}
-          onKeyDown={onEnterPress(searchTerm)}
           placeholder="Search"
         />
       </th>
@@ -51,7 +48,6 @@ export const Search = () => {
           type="text"
           name="title"
           onChange={handleChange}
-          onKeyDown={onEnterPress(searchTerm)}
           placeholder="Search"
         />
       </th>
@@ -62,7 +58,6 @@ export const Search = () => {
           type="text"
           name="content"
           onChange={handleChange}
-          onKeyDown={onEnterPress(searchTerm)}
           placeholder="Search"
         />
       </th>

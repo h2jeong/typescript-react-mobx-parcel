@@ -4,8 +4,8 @@ import axios from "axios";
 
 export default class ListStore {
   @observable list: ItemStore[] = [];
-  @observable term: string = "";
-  @observable itemProps: string = "";
+  // @observable term: string = "";
+  // @observable itemProps: string = "";
 
   constructor() {
     this.fetchList();
@@ -29,17 +29,23 @@ export default class ListStore {
     this.list.unshift(new ItemStore(title, content));
   };
 
-  @action checkAll = () => {};
+  // NOT YET
 
-  @action removeItems = () => {
-    this.list.filter(item => item.isChecked === false);
+  @action checkAll = () => {
+    // 전체 체크 처리하기
   };
 
-  /* Search store 만들기 */
-  @action searchTerm = () => {
+  @action removeItems = () => {
+    // 체크된 아이템 삭제하기
+    // return this.list.filter(item => item.isChecked === false);
+  };
+
+  /* Search 만들기 */
+  @action searchTerm = (term: string, name: string) => {
     return this.list.filter(item => {
-      let props = (item as any)[this.itemProps];
-      return props.toLowerCase().indexOf(this.term.toLowerCase()) > -1;
+      console.log(term);
+      let props = (item as any)[name];
+      return props.toLowerCase().indexOf(term.toLowerCase()) > -1;
     });
   };
 }

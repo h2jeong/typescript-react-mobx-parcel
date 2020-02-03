@@ -1,7 +1,6 @@
 import React from "react";
 import { useStore } from "../helpers/useStore";
 import itemClass from "../stores/item";
-import { onEnterPress } from "../helpers/useEnter";
 
 interface Props {
   item: itemClass;

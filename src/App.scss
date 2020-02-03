@@ -1,1 +1,68 @@
 @import "reset.scss";
+
+#root {
+  background: #eee;
+  padding: 15px;
+}
+.App {
+  background: #fff;
+  box-sizing: border-box;
+  input {
+    padding: 5px;
+    line-height: 20px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    background: #fff;
+  }
+}
+.listTbl {
+  width: 100%;
+  table-layout: fixed;
+  white-space: nowrap;
+  thead {
+    background: #e2ebec86;
+  }
+  th,
+  td {
+    display: table-cell;
+    overflow: hidden;
+    padding: 10px 5px;
+    text-overflow: ellipsis;
+  }
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+  input {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+.Maker {
+  background: #e2ebec86;
+  button {
+    width: 120px;
+    padding: 5px;
+    line-height: 20px;
+    color: #fff;
+    background: #5859b986;
+  }
+}
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.Register {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
