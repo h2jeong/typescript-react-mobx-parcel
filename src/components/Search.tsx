@@ -9,10 +9,12 @@ export const Search = () => {
   const handleChange = e => {
     setTerm(e.target.value);
     setName(e.target.name);
+    store.term = term;
+    store.itemProps = name;
     console.log(term, name);
   };
   const searchTerm = () => {
-    store.searchTerm(term, name);
+    store.searchTerm();
     setTerm("");
     setName("");
   };

@@ -4,6 +4,8 @@ import axios from "axios";
 
 export default class ListStore {
   @observable list: ItemStore[] = [];
+  @observable term: string = "";
+  @observable itemProps: string = "";
 
   constructor() {
     this.fetchList();
@@ -34,9 +36,10 @@ export default class ListStore {
   };
 
   /* Search store 만들기 */
-  @action searchTerm = (term: string, name: string) => {
-    return this.list.filter(
-      item => item[name].toLowerCase().indexOf(term.toLowerCase()) > -1
-    );
+  @action searchTerm = () => {
+    return this.list.filter(item => {
+      let props = (item as any)[this.itemProps];
+      return props.toLowerCase().indexOf(this.term.toLowerCase()) > -1;
+    });
   };
 }

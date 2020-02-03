@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html",
-    "start": "yarn build && node server/index.ts"
+    "start": "yarn build && node ./server/index.ts"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,8 +48,6 @@
     "cors": "^2.8.5",
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",
-    "tslint": "^6.0.0",
-    "tslint-config-airbnb": "^5.11.2",
-    "tslint-config-prettier": "^1.18.0"
+    "sass": "^1.25.0"
   }
 }
